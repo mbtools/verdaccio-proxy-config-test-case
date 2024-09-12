@@ -44,7 +44,7 @@ jobs:
         run: ./proxy.sh '${{ env.PROXY }}'
       - name: Authenticate Proxy
         shell: bash
-        run: npx npm-cli-adduser -u ${{env.CIUSER}} -p ${{env.CIPASS}} -e ${{env.CIEMAIL}} -r ${{env.PROXY}}
+        run: npx npm-automated-login-totp -u ${{env.CIUSER}} -p ${{env.CIPASS}} -e ${{env.CIEMAIL}} -r ${{env.PROXY}}
       - name: Publish super-duper-library to proxy
         shell: bash
         run: npm publish ./super-duper-library --registry ${{env.PROXY}}
