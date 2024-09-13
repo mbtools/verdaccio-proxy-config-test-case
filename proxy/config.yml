@@ -14,4 +14,4 @@ packages:
     access: $all
     publish: $authenticated
     proxy: npmjs
-log: { type: file, path: proxy.log, level: info }
+log: { type: file, path: proxy.log, format: pretty-timestamps, level: trace }
