@@ -3,6 +3,8 @@
 TEST_CASE_PROXY=$1
 DEBUG=verdaccio:*
 
+rm proxy.log
+
 # Boot the server in a background process.
 nohup npx verdaccio@latest --config ./config.yml --listen $TEST_CASE_PROXY &
 
