@@ -58,6 +58,7 @@ jobs:
           npm i --registry ${{ env.PROXY }}
           npm test
       - name: Show log and storage
+        if: always()
         shell: bash
         working-directory: ./proxy
         timeout-minutes: 3
