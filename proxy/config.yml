@@ -10,10 +10,6 @@ packages:
   'super-duper-library':
     access: $all
     publish: $all
-  '@*/*':
-    access: $all
-    publish: $authenticated
-    proxy: npmjs
   '**':
     access: $all
     publish: $authenticated
