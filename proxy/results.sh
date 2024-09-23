@@ -30,9 +30,11 @@ echo "### EXAMPLE @types/yargs-parser ###"
 echo "###"
 
 cat ./storage/@types/yargs-parser/package.json
+echo
 
 echo "###"
 echo "### EXAMPLE yargs-parser ###"
 echo "###"
 
 cat ./storage/yargs-parser/package.json
+echo
