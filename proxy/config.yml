@@ -8,6 +8,7 @@ uplinks:
   npmjs:
     url: https://registry.npmjs.org/
     timeout: 120s
+    cache: false
 packages:
   'super-duper-library':
     access: $all
