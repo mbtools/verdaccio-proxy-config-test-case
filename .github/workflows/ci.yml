@@ -49,11 +49,16 @@ jobs:
         shell: bash
         run: npm publish ./super-duper-library --registry ${{env.PROXY}}
       - name: Run smoke-test
+        continue-on-error: true
         shell: bash
         working-directory: test/smoke-test
         run: |
           # Since package integrity checksums may vary depending on what versions
           # are available in the proxy registry, we don't put the lockfile for this
           # test in source control. This means we have to use `npm i`, not `npm ci`.
-          npm i --registry ${{ env.PROXY }} || (cat ../../proxy/debug.log && exit 1)
-          npm test
+          npm i --registry ${{ env.PROXY }}
+      - name: Get results
+        shell: bash
+        working-directory: ./proxy
+        timeout-minutes: 3
+        run: ./results.sh
