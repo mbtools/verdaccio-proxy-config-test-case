@@ -1,17 +1,18 @@
 #!/bin/bash
 
-echo ### LOG ###
+echo "### LOG ###"
 
 cat proxy.log
 
-echo ### DEBUG ###
+echo "### DEBUG ###"
 
 cat debug.log
 
-echo ### ERRORS ###
+echo "### ERRORS ###"
 
 cat error.log
 
-echo ### STORAGE ###
+echo "### STORAGE ###"
 
-tree ./storage/ 
+# tree ./storage/ 
+ls -lR ./storage/

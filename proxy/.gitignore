@@ -1,4 +1,4 @@
 htpasswd
 storage
-proxy.log
+*.log
 nohup.out
