@@ -1,8 +1,0 @@
-{
-  "name": "issue4070",
-  "version": "1.0.0",
-  "description": "Issue 4070",
-  "dependencies": {
-    "@types/lodash": "http://localhost:4873/@types/lodash/-/lodash-4.17.2.tgz"
-  }
-}

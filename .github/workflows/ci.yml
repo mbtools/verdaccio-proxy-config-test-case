@@ -36,7 +36,7 @@ jobs:
       - name: Debugging Info
         shell: bash
         run: |
-          npx verdaccio --info
+          npx @mbtools/verdaccio-dev --info
       - name: Start npm Proxy
         shell: bash
         working-directory: ./proxy
