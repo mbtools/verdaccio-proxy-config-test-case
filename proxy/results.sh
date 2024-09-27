@@ -7,7 +7,7 @@ echo "###"
 cat proxy.log
 
 echo "###"
-echo "### ERRORS ###"
+echo "### DEBUG ###"
 echo "###"
 
 cat error.log
@@ -18,6 +18,8 @@ echo "###"
 
 tree -s ./storage/ 
 # ls -lR ./storage/
+
+exit #>>>>>>>>
 
 echo "###"
 echo "### EXAMPLE @tsconfig/node16 ###"
