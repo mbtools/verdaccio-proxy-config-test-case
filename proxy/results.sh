@@ -10,6 +10,12 @@ echo "###"
 echo "### DEBUG ###"
 echo "###"
 
+cat debug.log
+
+echo "###"
+echo "### DEBUG ###"
+echo "###"
+
 cat error.log
 
 echo "###"
