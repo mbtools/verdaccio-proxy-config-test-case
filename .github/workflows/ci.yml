@@ -13,12 +13,12 @@ on:
     # Prevent duplicate runs of this workflow on our own internal PRs.
     branches:
       - main
-      - next/*
+      - test2
   pull_request:
     types: [opened, synchronize, reopened, labeled]
     branches:
       - main
-      - next/*
+      - test2
 
 jobs:
   integration:
