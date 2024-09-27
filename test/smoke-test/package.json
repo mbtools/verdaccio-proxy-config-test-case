@@ -4,8 +4,7 @@
   "description": "Smoke test for super-duper-library",
   "type": "module",
   "devDependencies": {
-    "@tsconfig/node16": "^16.1.1",
-    "@types/node": ">=16"
+    "@tsconfig/node16": "^16.1.1"
   },
   "dependencies": {
     "super-duper-library": "^1.0.0"

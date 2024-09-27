@@ -7,12 +7,6 @@ echo "###"
 cat proxy.log
 
 echo "###"
-echo "### DEBUG ###"
-echo "###"
-
-cat debug.log
-
-echo "###"
 echo "### ERRORS ###"
 echo "###"
 
@@ -26,15 +20,8 @@ tree -s ./storage/
 # ls -lR ./storage/
 
 echo "###"
-echo "### EXAMPLE @types/yargs-parser ###"
+echo "### EXAMPLE @tsconfig/node16 ###"
 echo "###"
 
-cat ./storage/@types/yargs-parser/package.json
-echo
-
-echo "###"
-echo "### EXAMPLE yargs-parser ###"
-echo "###"
-
-cat ./storage/yargs-parser/package.json
+cat ./storage/@tsconfig/node16/package.json
 echo
