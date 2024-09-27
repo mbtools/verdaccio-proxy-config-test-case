@@ -5,12 +5,16 @@ auth:
 uplinks:
   npmjs:
     url: https://registry.npmjs.org/
-    timeout: 120s
 packages:
   '**':
     access: $all
-    publish: $authenticated
+    publish: $all
     proxy: npmjs
 log: { type: file, path: proxy.log, level: debug }
+
 web:
   enable: false
+middlewares:
+  audit:
+    enabled: true
+_debug: true
