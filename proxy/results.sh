@@ -7,16 +7,16 @@ echo "###"
 cat proxy.log
 
 echo "###"
+echo "### OUT ###"
+echo "###"
+
+cat out.log
+
+echo "###"
 echo "### DEBUG ###"
 echo "###"
 
 cat debug.log
-
-echo "###"
-echo "### DEBUG ###"
-echo "###"
-
-cat error.log
 
 echo "###"
 echo "### STORAGE ###"

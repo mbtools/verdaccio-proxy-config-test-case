@@ -6,9 +6,10 @@ env:
   CIUSER: ci
   CIEMAIL: ci@neon-bindings.com
   CIPASS: dummycipassword
+  VERDACCIO_VERSION: next-8
 
 on:
-  workflow_dispatch:    
+  workflow_dispatch:
   push:
     # Prevent duplicate runs of this workflow on our own internal PRs.
     branches:
@@ -33,21 +34,17 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-#      - name: Debugging Info
-#        shell: bash
-#        run: |
-#          npx verdaccio@next-7 --info
+      - name: Debugging Info
+        shell: bash
+        run: npx verdaccio@${{ env.VERDACCIO_VERSION }} --info
       - name: Start Verdaccio
         shell: bash
         working-directory: ./proxy
         timeout-minutes: 3
-        run: ./proxy.sh '${{ env.PROXY }}'
-#      - name: Authenticate Proxy
-#        shell: bash
-#        run: npx npm-automated-login-totp -u ${{env.CIUSER}} -p ${{env.CIPASS}} -e ${{env.CIEMAIL}} -r ${{env.PROXY}}
-#      - name: Publish super-duper-library to proxy
-#        shell: bash
-#        run: npm publish ./super-duper-library --registry ${{env.PROXY}}
+        run: ./proxy.sh '${{ env.PROXY }}' '${{ env.VERDACCIO_VERSION }}'
+      #      - name: Authenticate Proxy
+      #        shell: bash
+      #        run: npx npm-automated-login-totp -u ${{env.CIUSER}} -p ${{env.CIPASS}} -e ${{env.CIEMAIL}} -r ${{env.PROXY}}
       - name: Run Tests
         continue-on-error: true
         shell: bash
