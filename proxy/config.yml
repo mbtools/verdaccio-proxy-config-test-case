@@ -7,11 +7,10 @@ uplinks:
     url: https://registry.npmjs.org/
     timeout: 120s
 packages:
-  'super-duper-library':
-    access: $all
-    publish: $all
   '**':
     access: $all
     publish: $authenticated
     proxy: npmjs
 log: { type: file, path: proxy.log, level: debug }
+web:
+  enable: false

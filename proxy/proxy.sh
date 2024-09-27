@@ -3,13 +3,12 @@
 TEST_CASE_PROXY=$1
 
 rm proxy.log
-rm debug.log 
 rm error.log
 
 # Boot the server in a background process.
 # nohup npx verdaccio@latest --config ./config.yml --listen $TEST_CASE_PROXY &
 # nohup env DEBUG="express:*,verdaccio:storage*,verdaccio:proxy*,verdaccio:plugin:local-storage*,verdaccio:api*" npx verdaccio@next-7 --config ./config.yml --listen $TEST_CASE_PROXY >debug.log 2>error.log &
-nohup env DEBUG="express:*,verdaccio:*" npx verdaccio@next-8 --config ./config.yml --listen $TEST_CASE_PROXY >debug.log 2>error.log &
+nohup env DEBUG="express:*,verdaccio:*" npx verdaccio@next-8 --config ./config.yml --listen $TEST_CASE_PROXY 2>error.log &
 
 # Wait for the server to begin listening for connections
 ( tail -F -n10 proxy.log & ) | fgrep -q $TEST_CASE_PROXY
