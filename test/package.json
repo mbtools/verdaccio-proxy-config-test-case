@@ -1,7 +1,7 @@
 {
-  "name": "smoke-test",
+  "name": "test",
   "version": "1.0.0",
-  "description": "Smoke test for super-duper-library",
+  "description": "Test",
   "type": "module",
   "devDependencies": {
     "@tsconfig/node16": "^16.1.1"
