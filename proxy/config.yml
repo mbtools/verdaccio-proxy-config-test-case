@@ -17,4 +17,4 @@ web:
 middlewares:
   audit:
     enabled: true
-_debug: true
+

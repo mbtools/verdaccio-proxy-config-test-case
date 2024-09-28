@@ -9,6 +9,15 @@ echo "###"
 cat proxy.log
 
 echo "###"
+echo "### STORAGE ###"
+echo "###"
+
+tree -s ./storage/ 
+# ls -lR ./storage/
+
+exit #>>>>>>>>
+
+echo "###"
 echo "### OUT ###"
 echo "###"
 
@@ -19,21 +28,6 @@ echo "### DEBUG ###"
 echo "###"
 
 cat debug.log
-
-echo "###"
-echo "### STORAGE ###"
-echo "###"
-
-tree -s ./storage/ 
-# ls -lR ./storage/
-
-echo "###"
-echo "### _DEBUG ###"
-echo "###"
-
-curl $TEST_CASE_PROXY/-/_debug
-
-exit #>>>>>>>>
 
 echo "###"
 echo "### ENV ###"
