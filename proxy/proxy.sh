@@ -12,5 +12,3 @@ nohup env DEBUG="express:*,verdaccio:*" npx verdaccio@$VERSION --config ./config
 ( tail -F -n10 proxy.log & ) | fgrep -q $TEST_CASE_PROXY
 
 cat proxy.log
-
-curl -s -o debug.json $TEST_CASE_PROXY/_debug

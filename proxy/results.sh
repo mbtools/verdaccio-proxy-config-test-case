@@ -1,5 +1,7 @@
 #!/bin/bash
 
+TEST_CASE_PROXY=$1
+
 echo "###"
 echo "### LOG ###"
 echo "###"
@@ -26,18 +28,18 @@ tree -s ./storage/
 # ls -lR ./storage/
 
 echo "###"
+echo "### _DEBUG ###"
+echo "###"
+
+curl $TEST_CASE_PROXY/-/_debug
+
+exit #>>>>>>>>
+
+echo "###"
 echo "### ENV ###"
 echo "###"
 
 env | sort
-
-echo "###"
-echo "### _DEBUG ###"
-echo "###"
-
-cat debug.json
-
-exit #>>>>>>>>
 
 echo "###"
 echo "### EXAMPLE @tsconfig/node16 ###"
