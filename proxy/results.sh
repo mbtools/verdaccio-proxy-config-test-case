@@ -25,6 +25,12 @@ echo "###"
 tree -s ./storage/ 
 # ls -lR ./storage/
 
+echo "###"
+echo "### ENV ###"
+echo "###"
+
+env | sort
+
 exit #>>>>>>>>
 
 echo "###"

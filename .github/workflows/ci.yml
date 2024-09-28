@@ -6,7 +6,7 @@ env:
   CIUSER: ci
   CIEMAIL: ci@neon-bindings.com
   CIPASS: dummycipassword
-  VERDACCIO_VERSION: next-8
+  VERDACCIO_VERSION: 8.0.0-next-8.2
 
 on:
   workflow_dispatch:
