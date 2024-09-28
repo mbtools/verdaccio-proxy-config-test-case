@@ -31,6 +31,12 @@ echo "###"
 
 env | sort
 
+echo "###"
+echo "### _DEBUG ###"
+echo "###"
+
+cat debug.json
+
 exit #>>>>>>>>
 
 echo "###"

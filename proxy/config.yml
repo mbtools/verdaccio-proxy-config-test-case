@@ -10,7 +10,7 @@ packages:
     access: $all
     publish: $all
     proxy: npmjs
-log: { type: file, path: proxy.log, level: debug }
+log: { type: file, path: proxy.log, level: http }
 
 web:
   enable: false
