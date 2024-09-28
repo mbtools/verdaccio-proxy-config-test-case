@@ -2,11 +2,11 @@ name: CI
 
 env:
   NODE_VERSION: 20.x
-  PROXY: http://127.0.0.1:4873/
-  CIUSER: ci
-  CIEMAIL: ci@neon-bindings.com
-  CIPASS: dummycipassword
+  VERDACCIO_HOST: http://localhost:4873
   VERDACCIO_VERSION: 8.0.0-next-8.2
+  CIUSER: ci
+  CIPASS: dummycipassword
+  CIEMAIL: ci@neon-bindings.com
 
 on:
   workflow_dispatch:
@@ -29,27 +29,27 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: ${{env.NODE_VERSION}}
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Debugging Info
         shell: bash
-        run: npx verdaccio@${{ env.VERDACCIO_VERSION }} --info
+        run: npx verdaccio@${{env.VERDACCIO_VERSION}} --info
       - name: Start Verdaccio
         shell: bash
         working-directory: ./proxy
         timeout-minutes: 3
-        run: ./proxy.sh '${{ env.PROXY }}' '${{ env.VERDACCIO_VERSION }}'
+        run: ./proxy.sh '${{env.VERDACCIO_HOST}}' '${{env.VERDACCIO_VERSION}}'
       #      - name: Authenticate Proxy
       #        shell: bash
-      #        run: npx npm-automated-login-totp -u ${{env.CIUSER}} -p ${{env.CIPASS}} -e ${{env.CIEMAIL}} -r ${{env.PROXY}}
+      #        run: npx npm-automated-login-totp -u ${{env.CIUSER}} -p ${{env.CIPASS}} -e ${{env.CIEMAIL}} -r ${{env.VERDACCIO_HOST}}
       - name: Run Tests
         continue-on-error: true
         shell: bash
         working-directory: ./test
-        run: npm i --registry ${{ env.PROXY }}
+        run: npm i --registry ${{env.VERDACCIO_HOST}}
       - name: Get Logs
         shell: bash
         working-directory: ./proxy
