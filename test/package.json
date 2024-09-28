@@ -4,6 +4,6 @@
   "description": "Test",
   "type": "module",
   "devDependencies": {
-    "@tsconfig/node16": "^16.1.1"
+    "@types/http-errors": "^2.0.4"
   }
 }
