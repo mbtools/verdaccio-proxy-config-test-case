@@ -3,7 +3,7 @@ name: CI
 env:
   NODE_VERSION: 20.x
   VERDACCIO_HOST: http://localhost:4873
-  VERDACCIO_VERSION: latest
+  VERDACCIO_VERSION: 7.0.0-next-8.21
   CIUSER: ci
   CIPASS: dummycipassword
   CIEMAIL: ci@neon-bindings.com
