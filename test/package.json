@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Test",
   "type": "module",
-  "devDependencies": {
+  "dependencies": {
+    "http-errors": "^2.0.0",
     "@types/http-errors": "^2.0.4"
   }
 }
