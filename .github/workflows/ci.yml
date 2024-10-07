@@ -51,6 +51,7 @@ jobs:
         working-directory: ./test
         run: |
           npm config set registry=${{env.VERDACCIO_HOST}}
+          npm cache clean --force
           npm install
       - name: Get Logs
         shell: bash
