@@ -2,6 +2,7 @@ storage: ./storage
 auth:
   htpasswd:
     file: ./htpasswd
+    slow_verify_ms: 500
 uplinks:
   npmjs:
     url: https://registry.npmjs.org/
