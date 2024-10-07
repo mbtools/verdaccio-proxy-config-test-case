@@ -30,6 +30,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{env.NODE_VERSION}}
+          registry-url: ${{env.VERDACCIO_HOST}}
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
@@ -49,10 +50,7 @@ jobs:
         continue-on-error: true
         shell: bash
         working-directory: ./test
-        run: |
-          npm config set registry=${{env.VERDACCIO_HOST}}
-          npm cache clean --force
-          npm install
+        run: npm install
       - name: Get Logs
         shell: bash
         working-directory: ./proxy
