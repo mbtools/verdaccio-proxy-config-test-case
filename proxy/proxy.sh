@@ -7,7 +7,7 @@ rm *.log
 
 # Boot the server in a background process.
 # nohup env DEBUG="express:*,verdaccio:*" npx verdaccio@$VERSION --config ./config.yml --listen $TEST_CASE_PROXY >out.log 2>debug.log &
-nohup env DEBUG="verdaccio:*,-verdaccio:core*" npx verdaccio@$VERSION --config ./config.yml &
+nohup env DEBUG="verdaccio:*" npx verdaccio@$VERSION --config ./config.yml &
 
 # Wait for the server to begin listening for connections
 ( tail -F -n10 proxy.log & ) | fgrep -q $TEST_CASE_PROXY

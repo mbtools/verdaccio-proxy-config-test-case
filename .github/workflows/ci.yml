@@ -27,16 +27,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{env.NODE_VERSION}}
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-#      - name: Debugging Info
-#        shell: bash
-#        run: npx verdaccio@${{env.VERDACCIO_VERSION}} --info
+      #      - name: Debugging Info
+      #        shell: bash
+      #        run: npx verdaccio@${{env.VERDACCIO_VERSION}} --info
       - name: Start Verdaccio
         shell: bash
         working-directory: ./proxy
@@ -49,7 +49,9 @@ jobs:
         continue-on-error: true
         shell: bash
         working-directory: ./test
-        run: npm i --registry ${{env.VERDACCIO_HOST}}
+        run: |
+          npm config set registry=${{env.VERDACCIO_HOST}}
+          npm install
       - name: Get Logs
         shell: bash
         working-directory: ./proxy
