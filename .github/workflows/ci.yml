@@ -26,17 +26,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Debugging Info
         shell: bash
         run: |
-          npx verdaccio@next-7 --info
+          npx verdaccio@7.0.0-next-7.20 --info
       - name: Start npm Proxy
         shell: bash
         working-directory: ./proxy
@@ -56,7 +56,7 @@ jobs:
           # Since package integrity checksums may vary depending on what versions
           # are available in the proxy registry, we don't put the lockfile for this
           # test in source control. This means we have to use `npm i`, not `npm ci`.
-          npm i --registry ${{ env.PROXY }}
+          npm i --registry ${{ env.PROXY }} --loglevel silly
       - name: Get results
         shell: bash
         working-directory: ./proxy
