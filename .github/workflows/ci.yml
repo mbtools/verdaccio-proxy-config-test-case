@@ -50,7 +50,10 @@ jobs:
         continue-on-error: true
         shell: bash
         working-directory: ./test
-        run: npm install --loglevel silly
+        run: |
+          npm config set registry ${{env.VERDACCIO_HOST}}
+          npm config set prefer-online true
+          npm install --loglevel silly
       - name: Get Logs
         shell: bash
         working-directory: ./proxy
