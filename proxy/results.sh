@@ -15,8 +15,6 @@ echo "###"
 tree -s ./storage/ 
 # ls -lR ./storage/
 
-exit #>>>>>>>>
-
 echo "###"
 echo "### OUT ###"
 echo "###"
@@ -34,6 +32,14 @@ echo "### ENV ###"
 echo "###"
 
 env | sort
+
+echo "###"
+echo "### NPM CONFIG ###"
+echo "###"
+
+npm config list -l
+
+exit #>>>>>>>>
 
 echo "###"
 echo "### EXAMPLE @tsconfig/node16 ###"
