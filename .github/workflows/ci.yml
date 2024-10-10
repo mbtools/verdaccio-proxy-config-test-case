@@ -31,6 +31,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{env.NODE_VERSION}}
+      - name: List NPM cache
+        shell: bash
+        run: npm cache ls
       - name: Checkout Code
         uses: actions/checkout@v4
         with:

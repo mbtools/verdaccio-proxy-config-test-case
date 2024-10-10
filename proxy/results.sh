@@ -3,20 +3,20 @@
 TEST_CASE_PROXY=$1
 
 echo "###"
-echo "### LOG ###"
+echo "### VERDACCIO LOG ###"
 echo "###"
 
 cat proxy.log
 
 echo "###"
-echo "### STORAGE ###"
+echo "### STORAGE CONTENT ###"
 echo "###"
 
 tree -s ./storage/ 
 # ls -lR ./storage/
 
 echo "###"
-echo "### DEBUG ###"
+echo "### DEBUG LOG ###"
 echo "###"
 
 cat debug.log
@@ -26,6 +26,12 @@ echo "### NPM CONFIG ###"
 echo "###"
 
 npm config list -l
+
+echo "###"
+echo "### NPM CACHE ###"
+echo "###"
+
+npm cache ls
 
 exit #>>>>>>>>
 
