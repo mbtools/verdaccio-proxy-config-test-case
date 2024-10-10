@@ -16,18 +16,6 @@ tree -s ./storage/
 # ls -lR ./storage/
 
 echo "###"
-echo "### STORAGE ###"
-echo "###"
-
-tree -s /home/runner/.npm
-
-echo "###"
-echo "### OUT ###"
-echo "###"
-
-cat out.log
-
-echo "###"
 echo "### DEBUG ###"
 echo "###"
 
