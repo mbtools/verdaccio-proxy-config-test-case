@@ -57,7 +57,7 @@ jobs:
           # are available in the proxy registry, we don't put the lockfile for this
           # test in source control. This means we have to use `npm i`, not `npm ci`.
           npm config set prefer-online true
-          npm config set auth-always true
+          npm config set always-auth true
           npm i --registry ${{ env.PROXY }} --loglevel silly
       - name: Get results
         shell: bash
