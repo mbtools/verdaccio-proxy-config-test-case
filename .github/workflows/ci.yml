@@ -36,7 +36,7 @@ jobs:
       - name: Debugging Info
         shell: bash
         run: |
-          npx verdaccio@8.0.0-next-8.2 --info
+          npx verdaccio@8.0.0-next-8.3 --info
       - name: Start npm Proxy
         shell: bash
         working-directory: ./proxy
@@ -56,6 +56,7 @@ jobs:
           # Since package integrity checksums may vary depending on what versions
           # are available in the proxy registry, we don't put the lockfile for this
           # test in source control. This means we have to use `npm i`, not `npm ci`.
+          npm config set prefer-online true
           npm i --registry ${{ env.PROXY }} --loglevel silly
       - name: Get results
         shell: bash
