@@ -3,7 +3,8 @@
 TEST_CASE_PROXY=$1
 VERSION=$2
 
-rm *.log
+npm config set prefer-online true
+npm config set registry $TEST_CASE_PROXY
 
 # Boot the server in a background process.
 # nohup env DEBUG="express:*,verdaccio:*" npx verdaccio@$VERSION --config ./config.yml --listen $TEST_CASE_PROXY >out.log 2>debug.log &

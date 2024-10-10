@@ -16,6 +16,12 @@ tree -s ./storage/
 # ls -lR ./storage/
 
 echo "###"
+echo "### STORAGE ###"
+echo "###"
+
+tree -s /home/runner/.npm
+
+echo "###"
 echo "### OUT ###"
 echo "###"
 
@@ -28,18 +34,18 @@ echo "###"
 cat debug.log
 
 echo "###"
-echo "### ENV ###"
-echo "###"
-
-env | sort
-
-echo "###"
 echo "### NPM CONFIG ###"
 echo "###"
 
 npm config list -l
 
 exit #>>>>>>>>
+
+echo "###"
+echo "### ENV ###"
+echo "###"
+
+env | sort
 
 echo "###"
 echo "### EXAMPLE @tsconfig/node16 ###"
